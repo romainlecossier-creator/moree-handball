@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Morée Handball : Club de sport loisir, mixte et fun. 3 séances d'essai gratuites !">
+    <meta name="keywords" content="Handball, Morée, Sport Loisir, Gratuit, Fun, Mixte, Loir-et-Cher, Association sportive">
+    <meta name="author" content="Morée Handball">
+    
+    <!-- MODULE SEO AVANCÉ -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://moree-handball.fr/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moree-handball.fr/">
+    <meta property="og:title" content="Morée Handball | Sport & Convivialité">
+    <meta property="og:description" content="Rejoignez le club le plus cool du 41 ! 3 essais gratuits, ambiance détente, sport loisir mixte.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Morée Handball | 3 Essais Gratuits">
+    <meta name="twitter:description" content="Handball loisir mixte sans pression. Viens tester gratuitement le jeudi soir !">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsClub",
+      "name": "Morée Handball",
+      "url": "https://moree-handball.fr",
+      "description": "Club de handball loisir mixte à Morée. Ambiance conviviale, pas de compétition, 3 essais gratuits.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rue des Sports",
+        "addressLocality": "Morée",
+        "postalCode": "41160",
+        "addressCountry": "FR"
+      },
+      "priceRange": "35€/an",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Thursday",
+          "opens": "19:30",
+          "closes": "21:00"
+        }
+      ],
+      "image": [
+        "https://images.unsplash.com/photo-1629901925121-8a141c2a42f4"
+       ]
+    }
+    </script>
+    
+    <title>Morée Handball | Sport & Convivialité</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- DA "MODERN POP SPORT" --- */
+        :root {
+            --bg-body: #FFFFFF;        /* Blanc pur pour la modernité */
+            --bg-light: #F1F5F9;       /* Gris très clair pour les sections */
+            
+            /* Couleurs inspirées logo / sport moderne */
+            --primary-blue: #0F172A;   /* Bleu nuit (Texte & Contours) */
+            --accent-blue: #3B82F6;    /* Bleu électrique (Action) */
+            --accent-red: #E63946;     /* Rouge Sportif (remplace l'orange) */
+            --accent-green: #10B981;   /* Vert (Succès/Gratuit) */
+            
+            --white: #FFFFFF;
+            
+            --border-width: 3px;
+            --shadow-offset: 4px;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif; /* Police moderne, ronde mais sérieuse */
+            color: var(--primary-blue);
+            background-color: var(--bg-body);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .navbar-brand, .btn-pop, .price-tag, .badge-free {
+            font-family: 'Chakra Petch', sans-serif; /* Police un peu "Sport Tech" */
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        /* --- UTILS --- */
+        .text-blue { color: var(--primary-blue) !important; }
+        .text-red { color: var(--accent-red) !important; }
+        .bg-light-blue { background-color: #E0F2FE !important; }
+        
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-weight: 800;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            line-height: 1.1;
+        }
+
+        /* Soulignement dynamique */
+        .section-title span {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        .section-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: -5px;
+            width: 105%;
+            height: 12px;
+            background-color: var(--accent-red);
+            z-index: -1;
+            transform: skew(-10deg);
+            opacity: 0.8;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--white);
+            border-bottom: var(--border-width) solid var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            /* Style un peu plus sobre pour le logo */
+            border-radius: 50%; 
+            margin-right: 12px;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .nav-link {
+            font-weight: 700;
+            color: var(--primary-blue) !important;
+            font-size: 1.1rem;
+            margin: 0 5px;
+            padding: 8px 15px !important;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue) !important;
+            transform: translateY(-2px);
+        }
+
+        /* --- BUTTONS & BADGES --- */
+        .btn-pop {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            border: var(--border-width) solid var(--primary-blue);
+            padding: 12px 35px;
+            font-size: 1.2rem;
+            border-radius: 12px; /* Arrondi plus léger, plus "tech" */
+            font-weight: 700;
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--primary-blue);
+            transition: all 0.2s;
+            text-transform: uppercase;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-pop:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0px var(--primary-blue);
+            background-color: #2563EB; /* Bleu un peu plus foncé */
+            color: var(--white);
+        }
+
+        .btn-pop:active {
+            transform: translate(var(--shadow-offset), var(--shadow-offset));
+            box-shadow: 0 0 0 var(--primary-blue);
+        }
+        
+        .btn-pop-red {
+            background-color: var(--accent-red);
+        }
+        
+        .btn-pop-red:hover {
+            background-color: #BE123C;
+        }
+
+        .badge-free {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            border: 2px solid var(--primary-blue);
+            font-size: 1rem;
+            display: inline-block;
+            box-shadow: 3px 3px 0 var(--primary-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            position: relative;
+            min-height: 90vh;
+            padding-top: 100px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: var(--white);
+            background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+            background-size: 24px 24px; /* Motif à pois subtil */
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        /* Cadre photo Modern */
+        .hero-img {
+            border-radius: 20px;
+            border: var(--border-width) solid var(--primary-blue);
+            box-shadow: 12px 12px 0 var(--accent-blue);
+            transition: transform 0.3s;
+        }
+        
+        .hero-img:hover {
+            transform: scale(1.02);
+            box-shadow: 15px 15px 0 var(--accent-red);
+        }
+
+        /* --- CARDS (POP STYLE) --- */
+        .pop-card {
+            background: white;
+            border: var(--border-width) solid var(--primary-blue);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 6px 6px 0 var(--primary-blue);
+            transition: transform 0.2s;
+            height: 100%;
+        }
+
+        .pop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 var(--accent-red);
+            border-color: var(--accent-red);
+        }
+
+        .icon-square {
+            width: 70px;
+            height: 70px;
+            background-color: #EFF6FF; /* Bleu très clair */
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+
+        .pop-card:hover .icon-square {
+            background-color: var(--accent-red);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        /* --- PRICING / DEAL --- */
+        .deal-badge {
+            background: var(--accent-red);
+            color: white;
+            font-family: 'Chakra Petch', sans-serif;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 50px;
+            border: 2px solid var(--primary-blue);
+            position: absolute;
+            top: -15px;
+            right: 20px;
+        }
+
+        .price-big {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1;
+        }
+
+        /* --- FAQ (ACCORDION) --- */
+        .accordion-item {
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px !important;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .accordion-button {
+            background-color: white;
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-family: 'Chakra Petch', sans-serif;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--accent-blue);
+            color: white;
+            box-shadow: none;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        /* --- CONTACT FORM --- */
+        .contact-box {
+            background-color: var(--primary-blue);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 0 var(--accent-red);
+            color: white;
+        }
+
+        .form-control {
+            border: 2px solid var(--primary-blue);
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 500;
+            background-color: #F8FAFC;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--accent-blue);
+            background-color: white;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 60px 0 30px;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 991px) {
+            .hero-title { font-size: 3rem; text-align: center; }
+            .hero-img-container { margin-top: 40px; }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo2.jpg" alt="Logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/33/33736.png';">
+                <span>MORÉE HANDBALL</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#esprit">L'Esprit Club</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#infos">Infos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galerie">Photos</a></li>
+                    <li class="nav-item ms-2">
+                        <a class="btn-pop btn-pop-red" href="#contact" style="font-size: 1rem; padding: 10px 25px;">Rejoindre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="badge-free">
+                        <i class="fas fa-bolt me-2"></i> 3 Séances d'essai offertes
+                    </div>
+                    <h1 class="hero-title">DU SPORT,<br>DE LA DÉTENTE<br><span class="text-red">ET C'EST TOUT.</span></h1>
+                    <p class="lead mb-4" style="font-weight: 500;">Pas de prise de tête, pas de compétition acharnée. Juste le plaisir de jouer ensemble et de partager de bons moments.</p>
+                    
+                    <div class="d-flex gap-3 flex-column flex-sm-row">
+                        <a href="#contact" class="btn-pop">Je teste gratuitement</a>
+                        <a href="#infos" class="btn-pop" style="background-color: white; color: var(--primary-blue);">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img-container text-center">
+                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Equipe Handball Fun" class="img-fluid hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPRIT CLUB (Ex-Menu) -->
+    <section id="esprit" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title"><span>NOTRE PHILOSOPHIE</span></h2>
+                <p class="h5 text-muted">Sportif, mais surtout humain.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="pop-card">
+                        <div class="icon-square">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>100% MIXTE</h3>
+                        <p class="mt-3">Hommes, femmes, débutants ou confirmés... Tout le monde joue ensemble. C'est la diversité qui fait notre force sur le terrain !</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="pop-card position-relative">
+                        <div class="deal-badge">INCONTOURNABLE</div>
+                        <div class="icon-square">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3>CONVIVIALITÉ</h3>
+                        <p class="mt-3">Parce que le sport, ça donne soif ! Les après-matchs, les raclettes et les moments partagés sont aussi importants que les buts.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="pop-card">
+                        <div class="icon-square">
+                            <i class="fas fa-smile-wink"></i>
+                        </div>
+                        <h3>SANS PRESSION</h3>
+                        <p class="mt-3">Ici, on ne joue pas la Ligue des Champions. On vient pour se dépenser, progresser à son rythme et surtout s'amuser.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFOS / PRICING -->
+    <section id="infos" class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                     <!-- Encart Prix -->
+                    <div style="background: white; padding: 40px; border-radius: 20px; border: 3px solid var(--primary-blue); box-shadow: 10px 10px 0 var(--accent-blue);">
+                        <h3 class="mb-2">COTISATION ANNUELLE</h3>
+                        <div class="price-big">35€</div>
+                        <p class="text-muted fw-bold mt-2">Licence + Assurance incluses</p>
+                        <hr>
+                        <div class="d-flex align-items-center text-success fw-bold">
+                            <i class="fas fa-check-circle me-2 fa-lg"></i>
+                            <span>3 ESSAIS 100% GRATUITS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 ps-lg-5">
+                    <h2 class="section-title mb-4"><span>LE RENDEZ-VOUS</span></h2>
+                    
+                    <ul class="list-unstyled">
+                        <li class="mb-4 d-flex align-items-center">
+                            <div class="bg-primary-blue text-white rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--primary-blue);">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0 fw-bold">TOUS LES JEUDIS</h4>
+                                <p class="mb-0 text-muted">Note-le dans ton agenda !</p>
+                            </div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-center">
+                            <div class="bg-primary-blue text-white rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--primary-blue);">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0 fw-bold">19h30 - 21h00</h4>
+                                <p class="mb-0 text-muted">Gymnase de Morée (soyez à l'heure pour l'échauffement)</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <div class="bg-primary-blue text-white rounded-circle p-3 me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--primary-blue);">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0 fw-bold">MATÉRIEL</h4>
+                                <p class="mb-0 text-muted">Viens en tenue, avec tes baskets et ta bouteille d'eau.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title"><span>LA VIE DU CLUB</span></h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div style="border: 3px solid var(--primary-blue); border-radius: 12px; overflow: hidden; box-shadow: 6px 6px 0 var(--accent-red);">
+                        <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100" alt="Action">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="border: 3px solid var(--primary-blue); border-radius: 12px; overflow: hidden; box-shadow: 6px 6px 0 var(--accent-blue); transform: translateY(-10px);">
+                        <img src="https://images.unsplash.com/photo-1563404288059-4d6919013d39?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100" alt="Fun">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="border: 3px solid var(--primary-blue); border-radius: 12px; overflow: hidden; box-shadow: 6px 6px 0 var(--accent-red);">
+                        <img src="https://images.unsplash.com/photo-1590231519213-3fc277ca9703?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-100" alt="Team">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-padding bg-white">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center mb-5">
+                <h2 class="section-title">QUESTIONS FRÉQUENTES</h2>
+            </div>
+            
+            <div class="accordion" id="accordionFaq">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Je n'ai jamais fait de hand, c'est grave ?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                        <div class="accordion-body text-muted">
+                            Pas du tout ! Nous accueillons tous les niveaux avec grand plaisir. C'est l'occasion idéale pour découvrir ce sport dans une ambiance bienveillante.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Comment profiter des essais gratuits ?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                        <div class="accordion-body text-muted">
+                            C'est très simple : présentez-vous au gymnase un jeudi soir (idéalement envoyez-nous un petit message avant) en tenue de sport. Vous avez le droit à 3 séances pour tester l'ambiance sans engagement.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="contact-box">
+                        <h2 class="mb-3 text-white">LANCEZ-VOUS !</h2>
+                        <p class="mb-4">Envie de tester ou simplement une question ? Écrivez-nous, on ne mord pas.</p>
+                        
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Votre Prénom" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Votre Nom" required>
+                                </div>
+                            </div>
+                            <input type="email" class="form-control mb-3" placeholder="Votre Email" required>
+                            <textarea class="form-control mb-3" rows="3" placeholder="Votre message..." required></textarea>
+                            
+                            <button type="submit" class="btn btn-light w-100 fw-bold py-3 text-uppercase text-blue" style="border: 2px solid var(--primary-blue); box-shadow: 4px 4px 0 var(--primary-blue);">Envoyer mon message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                     <div style="background: white; border: 3px solid var(--primary-blue); border-radius: 20px; overflow: hidden; box-shadow: 10px 10px 0 var(--accent-blue); min-height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/USA_location_map.svg'); background-size: cover;">
+                           <div style="background: white; padding: 30px; border-radius: 15px; text-align: center; border: 2px solid var(--primary-blue); box-shadow: 4px 4px 0 rgba(0,0,0,0.1);">
+                               <i class="fas fa-map-marker-alt text-red fa-3x mb-3"></i>
+                               <h4 class="fw-bold">GYMNASE DE MORÉE</h4>
+                               <p class="text-muted fw-bold mb-0">Rue des Sports, 41160</p>
+                           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container text-center">
+            <h3 class="mb-4" style="font-family: 'Chakra Petch'; letter-spacing: 1px;">MORÉE HANDBALL</h3>
+            <div class="mb-4 d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-light rounded-circle" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border: 2px solid var(--primary-blue);"><i class="fab fa-facebook-f text-blue"></i></a>
+                <a href="#" class="btn btn-light rounded-circle" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border: 2px solid var(--primary-blue);"><i class="fab fa-instagram text-blue"></i></a>
+            </div>
+            <p class="mb-0 fw-bold opacity-75">&copy; 2024 - Sport, Plaisir & Convivialité</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar sticky
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = "0 4px 15px rgba(0,0,0,0.1)";
+            } else {
+                navbar.style.boxShadow = "none";
+                navbar.style.borderBottom = "3px solid var(--primary-blue)";
+            }
+        });
+
+        // Form handling
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("Merci ! Message bien reçu. À très vite sur le terrain !");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
